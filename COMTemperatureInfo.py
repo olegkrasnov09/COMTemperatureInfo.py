@@ -3,7 +3,7 @@ from tkinter import ttk
 import serial
 
 root = Tk()
-root.title("Температура")
+root.title("Термодатчик")
 root.geometry("320x205")
 root.resizable(False, False)
 root.config(bg="#494949")
