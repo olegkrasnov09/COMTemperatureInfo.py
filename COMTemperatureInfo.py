@@ -54,10 +54,10 @@ def write_com():
 
 f1 = Frame(bg="#494949")
 f1.pack()
-text_t = Label(f1, text="t:", bg="#494949", font=('Century Gothic', 36, "bold"), fg="white")
+text_t = Label(f1, text="t:", bg="#494949", font=('Century Gothic', 32, "bold"), fg="white")
 text_t.grid(row=0, column=0)
-text = Label(f1, textvariable=t_info, font=("Century Gothic", 36, "bold"), bg="#494949")
-text.grid(row=0, column=1, columnspan=2, pady=20)
+text = Label(f1, textvariable=t_info, font=("Century Gothic", 32, "bold"), bg="#494949")
+text.grid(row=0, column=1, columnspan=3, pady=20)
 
 text_com = Label(f1, text="COM:", bg="#494949", font=('Century Gothic', 16), fg="white")
 text_com.grid(row=1, column=0)
