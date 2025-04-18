@@ -4,7 +4,7 @@ import serial
 
 root = Tk()
 root.title("Термодатчик")
-root.geometry("320x205")
+root.geometry("300x205")
 root.resizable(False, False)
 root.config(bg="#494949")
 root.iconbitmap('free-icon-temperatures-3988334.ico')
@@ -19,6 +19,7 @@ ser = 0
 
 def connect():
     global ser
+    read_com()
     ser = serial.Serial(f'COM{curr_com}', 9600)
     show_temp()
 
@@ -61,12 +62,10 @@ text.grid(row=0, column=1, columnspan=3, pady=20)
 
 text_com = Label(f1, text="COM:", bg="#494949", font=('Century Gothic', 16), fg="white")
 text_com.grid(row=1, column=0)
-comEntry = ttk.Entry(f1, font=('Century Gothic', 16), width=5, textvariable=com_entry)
-comEntry.grid(row=1, column=1, stick='we')
-readButton = Button(f1, width=8, text="Чтение", font=('Century Gothic', 10), bg='#cab300', fg='white',
-                    activebackground='#c7c7c7', activeforeground='#cab300', command=read_com)
-readButton.grid(row=1, column=2, stick="we", padx=10)
-writeButton = Button(f1, width=8, text="Запись", font=('Century Gothic', 10), bg='#98a700', fg='white',
+comEntry = ttk.Entry(f1, font=('Century Gothic', 16), width=6, textvariable=com_entry)
+comEntry.grid(row=1, column=1, stick='we', padx=10)
+
+writeButton = Button(f1, width=12, text="Сохранить", font=('Century Gothic', 10), bg='#98a700', fg='white',
                      activebackground='#c7c7c7', activeforeground='#98a700', command=write_com)
 writeButton.grid(row=1, column=3, stick="we")
 connectButton = Button(f1, width=14, text="Подключение", font=('Century Gothic', 10), bg='#00759c', fg='white',
